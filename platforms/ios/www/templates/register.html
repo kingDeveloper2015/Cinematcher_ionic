@@ -1,0 +1,53 @@
+<ion-view view-title="Register" can-swipe-back="true"  class="registerpage-wrap">
+    <ion-content overflow-scroll="true">
+    <div class="ionic-body" data-fittext>
+        <!--<div class="bar bar-header bar-light">
+            &lt;!&ndash;<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()">&ndash;&gt;</a><h1 class="title">Register</h1>
+        </div>-->
+        <div zooming="true" direction="xy" style="margin-top:-78px;" >
+            <div class="content has-header scrollVertical" >
+                <form name="myForm" class="register-form">
+                    <div class="list">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">First Name</span>
+                            <input type="text" placeholder="First Name" name="firstName" ng-model="obj.firstName" required>
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Last Name</span>
+                            <input type="text" placeholder="Last Name" ng-model="obj.lastName" name="lastName" required>
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Email</span>
+                            <input type="email" placeholder="Email" ng-model="obj.email" name="email" required>
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Password</span>
+                            <input type="password" placeholder="Password" ng-model="obj.password" name="password" required>
+                        </label>
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Confirm Password</span>
+                            <input type="password" placeholder="Confirm Password" name="confirmPassword"  ng-model="obj.confirmPassword" required data-password-verify="obj.password">
+
+                        </label>
+                        <ion-list>
+                            <ion-checkbox  ng-model="obj.agree" name="agree" required >I Agree to the</ion-checkbox>
+                            <a href="#">Terms and Conditions</a>
+                        </ion-list>
+
+                    </div>
+                   <!-- <div class="padding">
+                        <p ng-show="myForm.firstName.$error.required">* FirstName is required</p>
+                        <p ng-show="myForm.lastName.$error.required">* LastName is required</p>
+                        &lt;!&ndash;<p ng-show="myForm.username.$invalid && !myForm.username.$pristine">* Username must be an email address</p>&ndash;&gt;
+                        <p ng-show="myForm.username.$error.minlength">* Username must be longer than 5 characters</p>
+                        <p ng-show="myForm.password.$error.required">* Password is required</p>
+                        <p ng-show="myForm.password.$error.minlength">* Password must be longer than 6 characters</p>
+                    </div>-->
+
+                </form>
+                <a class="button button-block button-royal button-positive" ng-disabled="myForm.$invalid" ng-click="register(obj)">Register</a>
+            </div>
+        </div>
+    </div>
+        </ion-content>
+</ion-view>

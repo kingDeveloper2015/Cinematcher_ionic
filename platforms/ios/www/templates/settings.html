@@ -1,0 +1,40 @@
+<ion-view view-title="" can-swipe-back="true"  hide-nav-bar="true" class="registerpage-wrap">
+    <ion-content overflow-scroll="true">
+        <div class="ionic-body" data-fittext>
+            <div class="bar bar-header bar-light">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Settings</h1>
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+        </div>
+            <div zooming="true" direction="xy" style="margin-top:2px;" >
+                <div class="content has-header scrollVertical" >
+                    <form name="myForm" class="register-form">
+                        <div class="list">
+                           <!-- <label class="item item-input item-floating-label">-->
+                                <span class="" style="color: #ffffff; font-size: 16px">Edit Password</span>
+
+                           <!-- </label>-->
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Old Password</span>
+                                <input type="password" placeholder="Old Password" ng-model="obj.OldPassword" name="lastName" required>
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">New Password</span>
+                                <input type="password" placeholder="New Password" ng-model="obj.NewPassword" name="email" required>
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Confirm Password</span>
+                                <input type="password" placeholder="Confirm Password" ng-model="obj.ConfirmPassword" name="password" required>
+                            </label>
+
+                        </div>
+
+                    </form>
+                    <span class="" style="color: #ffffff; margin-top: 0px; margin-left: 20px; font-size: 16px">Notification Settings</span>
+                    <ion-toggle class="item-accordion" style="background: transparent; color: #ffffff; border: none;" ng-model="obj.isAvailable" ng-checked="obj.isAvailable" toggle-class="toggle-calm" >Notifications</ion-toggle>
+                    <a class="button button-block button-royal button-positive"  ng-click="settings_save(obj)">Save</a>
+                    <a class="button button-block button-royal button-positive"  ng-click="settings_cancel()">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

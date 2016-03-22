@@ -1,0 +1,117 @@
+<ion-view view-title="Login" class="registerpage-wrap" hide-nav-bar="true">
+    <div class="ionic-body" data-fittext>
+        <div class="bar bar-header bar-light" style="background: #080808 !important; ">
+            <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Subscription</h1>
+            <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+        </div>
+
+        <div class="content has-header scrollVertical">
+            <div ng-show="packageShow">
+                <div class="subscription">
+<h3 style="color: #ffffff">This discription of subscription</h3>
+                    <ul>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </div>
+                <div class="subscriptionBar">
+                    Your Subscription is Active
+                </div>
+
+               <!-- <div>
+                    <span>30 Days $17 </span>
+                    <span>One Year $120 </span>
+                </div>-->
+                <div style="position: relative; margin-top: 10px;">
+
+                         <img class="subscriptionImage"  src="./img/1-year.png" />
+                    <p >
+                        30 Days $17
+                    </p>
+                   <!-- <a class="button button-block button-royal" ng-click="subscribe(17)" >Subscribe</a>-->
+
+
+
+                 </div>
+                 <div style=" position: relative;   margin-left: 40%;">
+                         <img class="subscriptionImage" src="./img/1-year.png" />
+                    <p  style=" ">
+                        1 Year $120
+                    </p>
+
+                    </div>
+                <!--<a class="button button-block button-royal" ng-click="subscribe(17)" >30 Days <br> $17</a>-->
+                <!--<div class="round-button"><div class="round-button-circle"><a href="#" ng-click="subscribe(17)" class="round-button">30 Days $17</a></div></div>
+                <div class="round-button"><div class="round-button-circle"><a href="#" ng-click="subscribe(120)" class="round-button">One Year $120</a></div></div>-->
+
+                <div>
+                    <a style="    width: 38%;  margin-top: 147px;     display: inline-block; margin-left: 4%;" class="button button-block button-royal" ng-click="subscribe(17)" >Subscribe</a>
+                    <a style="    width: 38%;  margin-top: 147px;     display: inline-block; margin-left: 1%;" class="button button-block button-royal" ng-click="subscribe(120)" >Subscribe</a>
+                </div>
+
+
+            </div>
+
+		<form class="register-form" stripe:form="saveCustomer"  ng-show="!packageShow">
+			<div class="list">
+                <ion-list>
+                   <h2 style="font-size: 18px; color: #ffffff">Card Information</h2>
+
+                </ion-list>
+			  <fieldset>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Number</span>
+			    		<input type="text" size="20" placeholder="Card"  data-stripe="number"/>
+                    </label>
+
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">cvc</span>
+			    		<input type="text" size="4" placeholder="cvc"  data-stripe="cvc"/>
+                    </label>  
+
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">exp-month</span>
+			    		<input type="number" size="2" placeholder="exp-month"  data-stripe="exp-month"/>
+                    </label>  
+
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">exp-year</span>
+			    		<input type="number" size="4" placeholder="exp-year"  data-stripe="exp-year"/>
+                    </label>  
+			  </fieldset>
+                <button class="button button-block button-royal button-positive" type="submit" ng-disabled="postJobForm.$invalid" >Save</button>
+			</div>
+		</form>
+
+            </div>
+         <!--  	<form class="register-form" name="loginForm">
+                <div class="list"> 
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Card</span>
+                        <input type="text"  placeholder="Card" ng-model="number" payments-validate="card" required> 
+                    </label>  
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Expiry</span>
+                        <input type="text"  placeholder="Expiry" ng-model="expiry"  payments-validate="expiry"  required> 
+                    </label> 
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Cvc</span>
+                        <input type="text"  placeholder="Cvc" ng-model="cvc" payments-validate="cvc"  required>
+                    </label> 
+                    <label class="item item-input item-floating-label" style="margin-bottom: 2%;">
+                        <span class="input-label">Password</span>
+                        <input type="password" placeholder="Password" ng-model="obj.password" required=""> 
+                    </label>  
+                </div>  
+        <a class="button button-block button-royal" ng-click="subsdsf" >Add card</a>
+            </form>
+
+ -->
+ 
+    </div>
+</ion-view>
+
+

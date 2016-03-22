@@ -1,0 +1,80 @@
+<ion-side-menus  >
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable bar bar-header bar-light">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="registerpage-wrap">
+  <!--  <ion-header-bar class="bar-stable" style="background: transparent;">
+      <h1 class="title" style="color: #ffffff;">Cinematcher</h1>
+    </ion-header-bar>-->
+    <ion-content class="ionic-body ">
+      <!--<ion-list>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>-->
+        <!--<ion-item menu-close href="#/app/search">
+          Search
+        </ion-item>-->
+        <ion-item menu-close  style="background: transparent; border-style: none !important;" href="#/app/profile">
+            My Profile <h3 style="float: right ; color: white; ">{{ profilerName }}</h3>
+        </ion-item>
+        <ion-item menu-close  style="background: transparent" href="#/app/dashboard">
+            Dashboard
+        </ion-item>
+        <div ng-repeat="group in groups">
+            <ion-item class="item-stable" style="background: transparent; color: #ffffff;"
+                      ng-click="toggleGroup(group)"
+                      ng-class="{active: isGroupShown(group)}">
+                <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+                &nbsp;
+                {{group.name}}
+            </ion-item>
+            <!--<ion-toggle class="item-accordion" ng-model="airplaneMode" toggle-class="toggle-calm" ng-show="group.name == 'Get Hired' ">Quick Connect</ion-toggle>-->
+            <ion-item class="item-accordion" href="#{{ item.href }}" style="background: transparent; color: #ffffff; margin-left: 24px; border: none;"
+                      ng-repeat="item in group.items"
+                      ng-show="isGroupShown(group)">
+                <i class="icon" ng-class="'ion-minus'"></i>
+                {{item.title}}
+            </ion-item>
+
+        </div>
+
+
+
+        <!-- <ion-item menu-close class="mycl" href="#" style="background: transparent">
+             Hired
+         </ion-item>
+         <ion-item menu-close class="mycl"  style="background: transparent" href="#/app/postJob">
+             Post a Job
+         </ion-item>
+
+         <ion-item menu-close  style="background: transparent" href="#/app/browseMatchesHire">
+             Browse Matches
+         </ion-item>-->
+       <ion-item menu-close  style="background: transparent" href="#/app/chatFilters">
+            Messages
+        </ion-item>
+        <ion-item menu-close  style="background: transparent" href="#/app/subscription">
+            Subscription
+        </ion-item>
+        <ion-item menu-close  style="background: transparent" href="#/app/settings">
+           Settings
+        </ion-item>
+
+        <ion-item menu-close  style="background: transparent" href="#" ng-click="logout()">
+            Logout
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

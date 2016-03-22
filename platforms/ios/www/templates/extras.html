@@ -1,0 +1,139 @@
+<ion-view view-title="" hide-nav-bar="true" class="registerpage-wrap">
+<ion-content overflow-scroll="true">
+    <div class="registerpage-wrap">
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light" style="background: #080808 !important; ">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Post Job(s)</h1>
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+            </div>
+            <!--<ion-scroll
+                    zooming="true" direction="xy" >-->
+                <div class="content has-header scrollVertical">
+                    <form name="postJobForm" class="register-form" >
+
+                        <div class="postjob-form">
+                            <div class="list">
+                                <label class="item item-input item-floating-label">
+                                    <span class="input-label">Project Title</span>
+                                    <input type="text" placeholder="Project title" ng-model="proj.title" required>
+                                </label>
+
+                                <label class="item item-input item-floating-label">
+                                    <span class="input-label">Project Description</span>
+                                    <!--<input type="text" placeholder="Description" ng-model="proj.description" size="300" required>-->
+                                    <textarea style="background: transparent" placeholder="Description" ng-model="proj.description"  required rows="8" cols="10">
+                                    </textarea>
+                                </label>
+
+
+                                <ion-list>
+                                    <div>
+
+                            <span style="display: inline-block">
+                        <ion-checkbox checked="" ng-model="proj.male"  ng-click="setGender(proj,'male')">Male</ion-checkbox> </span>
+                             <span style="display: inline-block">
+                        <ion-checkbox ng-model="proj.female"   ng-click="setGender(proj,'female')">Female</ion-checkbox> </span>
+
+                                    </div>
+                                </ion-list>
+
+                            </div>
+
+
+                        </div>
+                        <div class="postjob-form" >
+                            <div class="list">
+
+                                <label class="item item-input item-floating-label">
+                                    <span class="input-label">Age</span>
+                                    <input type="number" placeholder="Age" ng-model="proj.age" required>
+
+                                </label>
+
+
+                                <label class="item item-input item-floating-label">
+                                    <span class="input-label">Number of Positions</span>
+                                    <input type="number" placeholder="Number of Positions" ng-model="proj.positions" required >
+
+                                </label>
+
+
+                            </div>
+                        </div>
+
+                        <div class="postjob-form" >
+                            <div class="list">
+
+
+                                <h2 style="color: #ffffff">Whithin</h2>
+
+
+
+                                <label class="item item-input item-floating-label">
+
+                                    <input type="text" placeholder="Miles" ng-model="proj.withIn" style="float: left; position: absolute" required>
+                                   <!-- <div class="arrow" id ="button_arrow" style="float:right">
+                                        <button class="button button-icon icon ion-chevron-bottom"></button>
+                                    </div>-->
+                                </label>
+
+
+                            </div>
+
+
+
+
+                            <ion-list>
+                                <div>
+
+                            <span style="display: inline-block">
+                        <ion-checkbox checked=""  ng-model="proj.union" name="u"  ng-click="setWithIn(proj,'union')">Union</ion-checkbox> </span>
+                             <span style="display: inline-block">
+                        <ion-checkbox  ng-model="proj.nonUnion" name="u"  ng-click="setWithIn(proj,'nonUnion')">Non-Union</ion-checkbox> </span>
+                       <span style="display: inline-block">
+                           <ion-checkbox  ng-model="proj.both" name="u"  ng-click="setWithIn(proj,'both')">Both </ion-checkbox>
+                           </span>
+                                </div>
+                            </ion-list>
+
+
+                        </div>
+                        <div class="postjob-form4">
+                            <div class="list">
+
+
+                                <label class="item item-input item-floating-label">
+                                    <span class="input-label">Date</span>
+                                    <input type="date" placeholder="Date" ng-model="proj.date" required >
+                                    <div class="arrow" id ="button_arrow" style="float:right">
+                                        <button class="button button-icon icon ion-chevron-cal"></button>
+                                    </div>
+                                </label>
+
+                                <label class="item item-input item-floating-label" >
+                                    <span class="" style="color: #ffffff">Time</span>
+                                    <select ng-model="proj.time" class="item item-input item-floating-label" style="width:100%; color: white">
+                                        <option selected style="color: #000000">1:00 AM</option>
+                                        <option style="color: #000000">2:00 AM</option>
+                                        <option style="color: #000000">3:00 AM</option>
+                                    </select>
+                                  <!-- <div class="arrow" id ="button_arrow" style="float:right">
+                                        <button class="button button-icon icon ion-chevron-bottom"></button>
+                                    </div>-->
+                                </label>
+
+                            </div>
+                            <div class="register-form">
+                                <button class="button button-block button-royal button-positive" ng-disabled="postJobForm.$invalid" ng-click="postJob(proj)">Post Job(s)</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+<!--
+            </ion-scroll>-->
+        </div>
+    </div>
+</ion-content>
+</ion-view>

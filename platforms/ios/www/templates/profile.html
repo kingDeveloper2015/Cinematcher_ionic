@@ -1,0 +1,73 @@
+<ion-view view-title="" hide-nav-bar="true" class="registerpage-wrap">
+
+    <div class="ionic-body">
+        <div class="bar bar-header bar-light">
+            <!--<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()">--></a><h1 class="title"> My Profile <span class="heighlight-text"> </span></h1>
+            <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+        </div>
+        <ion-scroll zooming="true" direction="xy" style="height: 100%">
+            <div class="content has-header scrollVertical">
+                <div class="matches-wrap">
+
+                    <a class="item item-thumbnail-left"  href="#/app/editProfile">
+                        <img src="../img/dashboard-userimg.png" alt="">
+                        <h2 style="margin-left: 130px">{{ person.firstName }} {{ person.lastName }} </h2></br>
+                        <div class="social">
+                            <img src="../img/fb-icon.png" style="width: 55px; height: 55px; padding: 8px; "/>
+                            <img src="../img/twitter-icon.png" style="width: 55px; height: 55px; padding: 8px;"/>
+                            <img src="../img/youtube-icon.png" style="width: 55px; height: 55px; padding: 8px;"/>
+                            <img src="../img/imdb-icon.png" style="width: 55px; height: 55px; padding: 8px;"/>
+                            <img src="../img/web-icon.png" style="width: 55px; height: 55px; padding: 8px;"/>
+                            </br>
+                        </div>    </a>
+                    <div class="joblist-row" ng-show="isExistProfile">
+                        <a class="item" href="#">
+                            <div class="category-role">
+                                <h2 class="heighlight-text">Category</h2>
+                                <span><b>{{ person.category }}</b></span>
+                            </div></br></br>
+                            <div class="category-role">
+                                <h2 class="heighlight-text">Job Role(s)</h2>
+                                <span ng-repeat = "jb in jobRoles">
+                                    <b>{{ jb }}</b></span></br>
+
+                            </div></br></br>
+                            <div class="category-role">
+                                <h2 class="heighlight-text">Hourly Rate $</h2>
+                                <span><b>{{ person.hourRate }} $</b></span></br></br>
+
+                            </div></br>
+                            <div class="category-role">
+                                <h2 class="heighlight-text">Experience</h2>
+                                <span><b>{{ person.experience }} Year</b></span></br></br>
+
+                            </div>
+                            <div class="category-role">
+                                <h2 class="heighlight-text">Feedback</h2>
+                                <span><b>{{ person.totalFeedBack }}</b></span><span  class="heighlight-text">/5</span>
+
+                            </div>
+
+                            <div class="category-role">
+                                <h2 class="heighlight-text">Location</h2>
+                                <span><b>{{ person.location }}</b></span>
+
+                            </div>
+
+                        </A>
+
+                    </div>
+
+                   <!-- <a class="button button-block button-royal button-positive" href="#/app/editProfile">Edit</a>-->
+                   <!-- <button class="button button-block button-royal button-positive">< Discard</button>-->
+
+
+
+                </div>
+            </div>
+
+        </ion-scroll>
+
+    </div>
+
+</ion-view>

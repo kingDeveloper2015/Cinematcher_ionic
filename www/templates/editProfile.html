@@ -1,0 +1,114 @@
+<ion-view view-title="" can-swipe-back="true" hide-nav-bar="true"  class="registerpage-wrap">
+    <ion-content overflow-scroll="true">
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Edit Profile</h1>
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+            </div>
+
+                <div class="content has-header scrollVertical">
+                    <form name="myForm" class="register-form">
+
+                        <div class="list">
+                            <a class="item item-thumbnail-left" href="#" style="background: transparent">
+                                <img src="../img/dashboard-userimg.png" alt="">
+                                <h2 style="margin-left: 20%; margin-top: 2%; color: white">{{ person.firstName }} {{ person.lastName }} </h2></br>
+                                <!--<div class="social" style="margin-left: 10%">
+                                    <img src="../img/fb-icon.png" style="width: 55px; height: 55px; padding: 8px; "/>
+
+                                    </br>
+                                </div>  -->  </a>
+
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">First Name</span>
+                                <input type="text" placeholder="First Name" name="firstName" ng-model="person.firstName" required>
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Last Name</span>
+                                <input type="text" placeholder="Last Name" ng-model="person.lastName" name="lastName" required>
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Email / Contact</span>
+                                <input type="email" placeholder="Email" ng-model="person.email" name="email" required>
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Date Of Birth</span>
+                                <input type="date" placeholder="Date" ng-model="person.birthDate" required >
+                                <!--<div class="arrow" id ="button_arrow" style="float:right">
+                                    <button class="button button-icon icon ion-chevron-cal"></button>
+                                </div>-->
+                            </label>
+                            <div>
+                                <ion-list>
+                            <span style="display: inline-block">
+                        <ion-checkbox checked="" ng-model="person.male"  ng-click="setGender(person,'male')">Male</ion-checkbox> </span>
+                             <span style="display: inline-block">
+                        <ion-checkbox ng-model="person.female"   ng-click="setGender(person,'female')">Female</ion-checkbox> </span>
+                                    </ion-list>
+                            </div>
+                            <label class="item item-input item-floating-label">
+                                <span class="" style="color: #ffffff">State</span>
+                                <select ng-model="person.state"  class="item item-input item-floating-label" style="width:100%; color: white">
+                                    <option selected style="color: #000000">state1</option>
+                                    <option style="color: #000000">state2</option>
+                                    <option style="color: #000000">state3</option>
+                                </select>
+
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">City/Zip Code</span>
+                                <input type="text" placeholder="City/Zip Code" ng-model="person.zipCode" required >
+                                <div class="arrow" id ="button_arrow" style="float:right">
+                                    <button class="button button-icon icon "></button>
+                                </div>
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="" style="color: #ffffff" >Category</span>
+                                <select ng-model="person.category" class="item item-input item-floating-label" style="width:100%; color: white" ng-change="changeCategory(person.category)" >
+                                    <option ng-repeat="item in categories" style="color: #000000">{{ item.category }}</option>
+
+                                </select>
+                               <!-- <div class="arrow" id ="button_arrow" style="float:right">
+                                    <button class="button button-icon icon ion-chevron-bottom"></button>
+                                </div>-->
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="" style="color: #ffffff">Job Role</span>
+                                <select ng-model="person.jobRole" class="item item-input item-floating-label" style="width:100%; color: white">
+                                    <option ng-repeat="item in jobRoles" style="color: #000000">{{ item }}</option>
+
+                                </select>
+                              <!--  <div class="arrow" id ="button_arrow" style="float:right">
+                                    <button class="button button-icon icon ion-chevron-bottom"></button>
+                                </div>-->
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Experience(Years)</span>
+                                <input type="number" placeholder="Experience(Years)" ng-model="person.experience" required>
+
+                            </label>
+                            <label class="item item-input item-floating-label">
+                                <span class="input-label">Hourly Rate($/hour)</span>
+                                <input type="text" placeholder="Hourly Rate($/hour)" ng-model="person.hourRate" required>
+
+                            </label>
+
+                            <div class="list">
+
+                                <span class="input-label" style="width: 100%"> Location</span>
+                                <ion-google-place placeholder="Enter an address"  ng-model="person.location" current-location="true" />
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!--<a class="button button-block button-royal button-positive" style="width: 40%"  ng-click="cancelSave()">Cancel</a>-->
+                    </form>
+                    <a class="button button-block button-royal button-positive"   ng-click="saveChanges(person)">Save Changes</a>
+                </div>
+
+        </div>
+    </ion-content>
+</ion-view>

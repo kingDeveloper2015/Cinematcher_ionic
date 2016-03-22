@@ -1,0 +1,28 @@
+
+<ion-view view-title="" hide-nav-bar="true" can-swipe-back="true"  class="registerpage-wrap">
+    <ion-content overflow-scroll="true">
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Browse Matches: <span class="heighlight-text">Projects</span></h1>
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+            </div>
+
+                <div class="content has-header scrollVertical">
+                    <div class="dashboard-wrap project-wrap">
+
+                        <a class="item item-thumbnail-left" href="#/app/matchesProject/{{ proj._id }}/{{ proj.jobRole }}" ng-repeat="proj in projects">
+                            <img src="../img/project-1.png" alt="">
+                            <div class="desc">
+                                <h3>{{ proj.title }} <br> {{ proj.jobRole }}</h3>
+                                <span class="heighlight-text">14 Matches</span>
+                            </div>
+                            <i class="icon-right ion-chevron-right"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+
+        </div>
+        </ion-content>
+    </ion-view>

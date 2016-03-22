@@ -1,0 +1,100 @@
+<ion-view view-title=""  hide-nav-bar="true"  can-swipe-back="false" class="registerpage-wrap" >
+
+
+    <div class="ionic-body">
+        <div class="bar bar-header bar-light">
+            <!--<a class="button icon-left ion-chevron-left button-clear button-dark"></a>--><h1 class="title">Dashboard</h1>
+            <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+        </div>
+
+            <div class="content has-header scrollVertical">
+                <div class="dashboard-wrap">
+
+                    <a class="item item-thumbnail-left" href="#">
+                        <img src="../img/dashboard-userimg.png" alt="">
+                        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+                        <i class="icon-right ion-chevron-right"></i>
+                    </a>
+
+                    <div class="hire-btngroup">
+                        <a href="#" class="button button-royal hire-button" ng-click="swapHireTab('hire')">Hire</a>
+                        <a href="#" class="button button-royal get-button" ng-click="swapHireTab('getHired')">Get Hired</a>
+                    </div>
+
+
+                    <div class="notification-wrap" ng-switch on="selection">
+                        <div class="list" ng-switch-when="hire">
+
+                            <div class="notification-row" ng-show="fullDashboard">
+                                <a class="item" href="#/app/chatFilters">
+                                    <span class="heighlight-text">{{ message }}</span><span>New Messages</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+
+                            </div>
+
+                           <!-- <div class="notification-row">
+                                <a class="item" href="#/app/postJobTabs">
+                                    <span class="heighlight-text"></span><span>Post a Job</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+
+                            </div>-->
+                            <div class="notification-row">
+                                <a class="item" href="#/app/jobsPosted">
+                                    <span class="heighlight-text">{{ jobsPosted }}</span><span>Jobs Posted</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+
+                            </div>
+                            <div class="notification-row" ng-show="fullDashboard">
+                                <a class="item" href="#/app/browseMatchesHire" >
+                                    <span class="heighlight-text">{{ browseMatches }}</span><span>Browse Matches</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="notification-row" ng-show="fullDashboard">
+                                <a class="item" href="#/app/hireConnections" >
+                                    <span class="heighlight-text"></span><span>Connections</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="notification-row">
+                                <a class="item" href="#/app/subscription">
+                                    <span class="yellowheighlight-text">27</span><span>Days of <strong>CinematcherPro</strong> Left</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="list" ng-switch-when="getHired">
+
+                            <div class="notification-row">
+                                <a class="item" href="#/app/chatFilters">
+                                    <span class="heighlight-text"></span><span>New Messages</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+
+                                <a class="item" href="#/app/browseJobs">
+                                    <span class="heighlight-text"></span><span>Jobs Available</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+
+                            </div>
+
+                            <div class="notification-row">
+
+                                <a class="item" href="#/app/getHiredJobRoles">
+                                    <span class="heighlight-text"></span><span>Browse Matches</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+
+                            </div>
+                            <div class="notification-row" >
+                                <a class="item" href="#/app/getHireConnections" >
+                                    <span class="heighlight-text"></span><span>Connections</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="notification-row">
+                                <a class="item" href="#/app/subscription">
+                                    <span class="yellowheighlight-text">27</span><span>Days of <strong>CinematcherPro</strong> Left</span><i class="icon-right ion-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+</ion-view>

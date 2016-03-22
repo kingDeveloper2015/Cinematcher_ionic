@@ -1,0 +1,145 @@
+
+<ion-view view-title="" hide-nav-bar="true" can-swipe-back="true"  class="registerpage-wrap">
+    <ion-content overflow-scroll="true">
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Messages <span class="heighlight-text"></span></h1>
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+            </div>
+
+
+            <!-- <ion-tabs class="tabs-positive " style=" margin-top: 50px;">
+
+                 <ion-tab title="Connections"  >
+                     <div class="registerpage-wrap" style="margin-top: 60px !important;">
+                     <div class="content has-header scrollVertical" >
+                         <div class="dashboard-wrap project-wrap"  >
+
+                             <a class="item item-thumbnail-left" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" ng-repeat="proj in projects">
+                                 <img src="../img/project-1.png" alt="">
+                                 <div class="desc">
+                                     <h3>{{ proj[0].jobId.title }} <br> {{ proj[0].jobId.jobRole }}</h3>
+                                     <span class="heighlight-text">{{ proj.length }}</span>
+                                 </div>
+                                 <i class="icon-right ion-chevron-right"></i>
+                             </a>
+
+
+                         </div>
+                     </div>
+                     </div>
+                 </ion-tab>
+
+                 <ion-tab title="Active Jobs" >
+                     &lt;!&ndash; Tab 2 content &ndash;&gt;
+                    <div class="registerpage-wrap" style="margin-top: 60px !important;">
+                        <div class="content has-header scrollVertical" >
+                            <div class="dashboard-wrap project-wrap"  >
+
+                                &lt;!&ndash;<a class="item item-thumbnail-left" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" ng-repeat="proj in projects">
+                                    <img src="../img/project-1.png" alt="">
+                                    <div class="desc">
+                                        <h3>{{ proj[0].jobId.title }} <br> {{ proj[0].jobId.jobRole }}</h3>
+                                        <span class="heighlight-text">{{ proj.length }}</span>
+                                    </div>
+                                    <i class="icon-right ion-chevron-right"></i>
+                                </a>
+&ndash;&gt;
+
+                                <h2>Hello</h2>
+                            </div>
+                        </div>
+                    </div>
+                </ion-tab>
+
+                <ion-tab title="Ratings" >
+                    &lt;!&ndash; Tab 3 content &ndash;&gt;
+                </ion-tab>
+
+            </ion-tabs>-->
+            <!-- <div class="tabs-striped tabs-top  tabs-color-light" style="background: transparent">
+                 <div class="tabs" style="    background: transparent; margin-top: 4px;">
+                     <a class="tab-item active" href="#">
+                        &lt;!&ndash; <i class="icon ion-home"></i>&ndash;&gt;
+                        Test
+                    </a>
+                    <a class="tab-item" href="#">
+                        &lt;!&ndash;<i class="icon ion-star"></i>&ndash;&gt;
+                        Favorites
+                    </a>
+                    <a class="tab-item" href="#">
+                        &lt;!&ndash;<i class="icon ion-gear-a"></i>&ndash;&gt;
+                        Settings
+                    </a>
+                </div>
+            </div>-->
+            <!-- <div class="tabs-striped tabs-color-assertive">
+                 <div class="tabs">
+                     <a class="tab-item active" href="#">
+                         <i class="icon ion-home"></i>
+                         Test
+                     </a>
+                     <a class="tab-item" href="#">
+                         <i class="icon ion-star"></i>
+                         Favorites
+                     </a>
+                     <a class="tab-item" href="#">
+                         <i class="icon ion-gear-a"></i>
+                         Settings
+                     </a>
+                 </div>
+             </div>-->
+            <div class="content has-header scrollVertical" >
+                <div class="dashboard-wrap project-wrap"  >
+                   <!-- <div class="hire-btngroup">
+                        <a href="#" class="button button-royal hire-button" ng-click="swapHireTab('hire')">Hire</a>
+                        <a href="#" class="button button-royal get-button" ng-click="swapHireTab('getHired')">Get Hired</a>
+                    </div>-->
+                    <div class="button-bar ic-selected" data-componentid="button-bar1" data-tap-disabled="true">
+                        <a class="button button-stable button-block  {{ messageClassHire }}  "  data-componentid="button8" data-tap-disabled="true" href="#" ng-click="swapMessages('hire')">Hire</a>
+                        <a class="button button-stable button-block {{messageClassGetHired}}  " data-componentid="button9" data-tap-disabled="true" href="#" ng-click="swapMessages('getHired')" >Get Hired</a>
+
+                    </div>
+
+                    <ion-list data-componentid="list10" class="disable-user-behavior" data-tap-disabled="true" ng-switch on="selectionType">
+                        <div class="list" ng-switch-when="hire">
+                            <ion-item class="item-thumbnail-left item ic-selected" data-componentid="list-item-thumbnail15" href="#/app/chatMessages/{{ obj.getHiredId._id }}/{{ obj.jobId }}" data-tap-disabled="true" ng-repeat="obj in messangers">
+                                <a class="item-content" ng-href="#/app/chatMessages/{{ obj.getHiredId._id }}/{{ obj.jobId }}" href="#/app/chatMessages/{{ obj.getHiredId._id }}/{{ obj.jobId }}">
+                                <img src="/img/avatar-img.png">
+                             <h2>{{ obj.getHiredId.firstName}} {{ obj.getHiredId.lastName}}</h2>
+                                    </a>
+                            <!--<p>Item</p>-->
+                            </ion-item>
+
+                        </div>
+
+                        <div class="list" ng-switch-when="getHired">
+                            <ion-item class="item-thumbnail-left item ic-selected" data-componentid="list-item-thumbnail15" href="#/app/chatMessages/{{ obj.hireId._id }}/{{ obj.jobId }}" data-tap-disabled="true" ng-repeat="obj in messangers">
+                                <a class="item-content" ng-href="#/app/chatMessages/{{ obj.hireId._id }}/{{ obj.jobId }}" href="#/app/chatMessages/{{ obj.hireId._id }}/{{ obj.jobId }}">
+                                    <img src="/img/avatar-img.png">
+                                    <h2>{{ obj.hireId.firstName}} {{ obj.hireId.lastName}}</h2>
+                                </a>
+                                <!--<p>Item</p>-->
+                            </ion-item>
+
+                        </div>
+                    </ion-list>
+
+
+                  <!--  <a class="item item-thumbnail-left" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" ng-repeat="proj in projects">
+                        <img src="../img/project-1.png" alt="">
+                        <div class="desc">
+                            <h3>{{ proj[0].jobId.title }} <br> {{ proj[0].jobId.jobRole }}</h3>
+                            <span class="heighlight-text">{{ proj.length }}</span>
+                        </div>
+                        <i class="icon-right ion-chevron-right"></i>
+                    </a>-->
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

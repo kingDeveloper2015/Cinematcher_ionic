@@ -1,0 +1,98 @@
+<ion-view view-title="" hide-nav-bar="true" class="registerpage-wrap">
+
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Cinematographer: <span class="heighlight-text">Matches </span></h1>
+
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+
+            </div>
+
+
+                <div class="content has-header scrollVertical">
+                    <div class="cinema-wrap">
+
+                        <td-cards>
+                            <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
+                                     on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+                                     on-partial-swipe="cardPartialSwipe(amt)" style="    width: 100%; height: 100%;">
+
+                                <a class="item item-thumbnail-left" href="#">
+                                    <img src="../img/project-1.png" alt="">
+                                    <h3>{{ card.title }}</h3><br><br><br>
+                                    <h3>{{ card.category }}</h3>
+                                </a>
+                                <div class="joblist-row">
+                                    <a class="item" href="#">
+                                        <div class="category-role">
+                                            <h2 class="heighlight-text">Description</h2>
+                                            <div class="content" id="cont">
+                                                <h3>{{ card.description }}
+
+                                                </h3>
+                                            </div>
+                                            <div class="arrow" id ="button_arrow">
+                                                <button class="button button-icon icon ion-chevron-bottom"></button>
+                                            </div>
+                                            <div class="arrow" id ="button_arrow1" style="display: none;">
+                                                <button class="button button-icon icon ion-chevron-up"></button>
+                                            </div>
+                                        </div></br></br>
+
+                                        <div class="category-role">
+                                            <h2 class="heighlight-text">Hourly Rate</h2>
+                                            <span><b>${{ card.hrRate }}</b></span></br></br>
+                                        </div></br>
+                                        <div class="category-role">
+                                            <h2 class="heighlight-text">Experience Required</h2>
+                                            <span><b>{{ card.experience }} Year</b></span></br></br>
+                                        </div></br>
+                                        <!-- <div class="category-role">
+                                             <h2 class="heighlight-text">Location</h2>
+                                             <span><b>Union or Non-Union</b></span></br></br>
+                                         </div><br>-->
+                                        <div class="category-role">
+                                            <h2 class="heighlight-text">Location</h2>
+                                            <span><b>{{ card.location }}</b></span></br></br>
+                                        </div>
+                                        <br>
+                                        <div class="category-role">
+                                            <h2 class="heighlight-text">Employer Feedback</h2>
+                                            <span><b>{{ card.hire.totalFeedBack }}</b></span><span  class="heighlight-text">/5</span>
+                                        </div>
+                                        <a class="item item-thumbnail-left1" href="#">
+                                            <img src="../img/user.png" alt="" style="float:left"><br />
+                                            <h2 style="margin-left:4%">{{ card.hire.firstName }} {{ card.hire.lastName }}</h2>
+                                            <i class="icon-right ion-chevron-right"></i>
+                                        </a>
+
+                                    </a>
+                                </div>
+                            </td-card>
+                        </td-cards>
+
+                    </div>
+                </div>
+
+        </div>
+
+</ion-view>
+
+
+ <script>
+    $('#button_arrow').click(function(){
+    $('#cont').height('auto');
+    $('#cont h3').height('auto');
+ $('#button_arrow').hide(); // To hide all other contents
+    $("#button_arrow1").show();
+});
+
+$('#button_arrow1').click(function(){
+    $('#cont').animate({height:'100px'}, 500);
+    $('#cont h3').animate({height:'100px'}, 500);
+ $('#button_arrow1').hide(); // To hide all other contents
+    $("#button_arrow").show();
+});
+
+
+ </script>

@@ -1,0 +1,73 @@
+
+<ion-view view-title="" hide-nav-bar="true" can-swipe-back="true"  class="registerpage-wrap">
+    <ion-content overflow-scroll="true">
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light">
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Connections <span class="heighlight-text"></span></h1>
+                <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+            </div>
+
+            <div class="content has-header scrollVertical" >
+                <div class="dashboard-wrap project-wrap"  >
+                    <div class="button-bar ic-selected" data-componentid="button-bar1" data-tap-disabled="true">
+                        <a class="button button-stable button-block  {{ connectionClass }}  " data-componentid="button8" data-tap-disabled="true" href="#" ng-click="swapConnectionTabs('connections')">Connections</a>
+                        <a class="button button-stable button-block {{ activeJobsClass }} " data-componentid="button9" data-tap-disabled="true" href="#" ng-click="swapConnectionTabs('activeJobs')" >Active Jobs</a>
+                        <a class="button button-stable button-block {{rRatingClass }}" data-componentid="button9" data-tap-disabled="true" href="#" ng-click="swapConnectionTabs('ratings')" >Ratings</a>
+
+                    </div>
+
+                  <!--  <a class="item item-thumbnail-left" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" ng-repeat="proj in projects">
+                        <img src="../img/project-1.png" alt="">
+                        <div class="desc">
+                            <h3>{{ proj[0].jobId.title }} <br> {{ proj[0].jobId.jobRole }}</h3>
+                            <span class="heighlight-text">{{ proj.length }}</span>
+                        </div>
+                        <i class="icon-right ion-chevron-right"></i>
+                    </a>-->
+
+                    <ion-list data-componentid="list10" class="disable-user-behavior" data-tap-disabled="true" ng-switch on="selectConnectionTabs" >
+                        <div class="list" ng-switch-when="connections">
+                            <ion-item class="item-thumbnail-left item ic-selected" data-componentid="list-item-thumbnail15" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" data-tap-disabled="true" ng-repeat="proj in projects">
+                                <a class="item-content" ng-href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}">
+                                    <img src="/img/avatar-img.png">
+                                    <h2 style="">{{ proj[0].jobId.title }}</h2>
+
+                                </a>
+                                <p>{{ proj[0].jobId.jobRole }}</p>
+
+                            </ion-item>
+
+                        </div>
+                        <div class="list" ng-switch-when="activeJobs">
+                            <ion-item class="item-thumbnail-left item ic-selected" data-componentid="list-item-thumbnail15" href="#" data-tap-disabled="true" ng-repeat="job in activeJobs">
+
+                                    <img src="/img/avatar-img.png">
+                                    <h2 style="">{{ job.title }}</h2>
+
+                                <p>{{ job.jobRole }}</p>
+                                <a  class="button button-block button-royal button-positive" style="display: inline-block; margin-left: 10%; width: 150px" href="#/app/chatMessages/{{ job.getHired }}/{{ job._id }}" >Message</a>
+                            </ion-item>
+
+                        </div>
+                        <div class="list" ng-switch-when="ratings">
+                           <!-- <ion-item class="item-thumbnail-left item ic-selected" data-componentid="list-item-thumbnail15" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" data-tap-disabled="true" ng-repeat="proj in projects">
+                                <a class="item-content" ng-href="#/app/hireConnections/project/{{ proj[0].jobId._id }}" href="#/app/hireConnections/project/{{ proj[0].jobId._id }}">
+                                    <img src="/img/avatar-img.png">
+                                    <h2 style="">{{ proj[0].jobId.title }}</h2>
+
+                                </a>
+                                <p>{{ proj[0].jobId.jobRole }}</p>
+
+                            </ion-item>-->
+
+                        </div>
+
+                    </ion-list>
+
+                </div>
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

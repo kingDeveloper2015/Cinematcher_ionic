@@ -1,0 +1,117 @@
+
+<ion-view view-title=""  hide-nav-bar="true"  can-swipe-back="false" class="registerpage-wrap">
+
+        <div class="ionic-body">
+            <div class="bar bar-header bar-light" >
+                <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Messages:<span class="heighlight-text">{{ receiver.firstName }} </span></h1>
+                <button class="button button-icon icon ion-navicon"  ng-click="toggleSideMenu()"></button>
+            </div>
+
+                <div class="chat_people-wrap">
+
+                    <div class="list" >
+                        <div class="joblist-row">
+                            <a class="item" href="#" style="margin-top: 70px">
+                                <img src='../img/dashboard-userimg.png' width="100px" height="100px"  style="float: left"/>
+
+                                <p  style="float: left; margin-left: 20px; margin-top: 10px">{{ receiver.firstName }} {{ receiver.lastName }}</p>
+                                <img src='../img/pro.png' width="100px" height="40px" style="margin-top: 50px; margin-left: -150px"/>
+                                <img src='../img/block.png' width="100px" height="40px"/>
+
+
+                            </a>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            <div>
+                <div class="chat_message" >
+                    <div class="list" >
+                        <div class="joblist-row" ng-repeat="obj in allMessages"  >
+                            <a class="item" href="#"  ng-if="user._id == obj.receiverId">
+                                <img src="../img/dashboard-userimg.png" width="6%" height="2%" style="float: left"/>
+                                <p  style="float: left; margin-left: 20px; margin-top: 20px">{{ obj.message }}</p>
+                            </a>
+                            <a class="item" href="#" ng-if="user._id == obj.senderId" >
+                                <span class="heighlight-text">{{ obj.message }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             <!--  <div class="chat_message1">
+
+                    <div class="list" >
+                        <div class="joblist-row1">
+                            <a class="item" href="#" >
+                                <img src="../img/dashboard-userimg.png" width="6%" height="6%" style="float: left"/>
+                                <p  style="float: left; margin-left: 20px; margin-top: 20px">{{ obj.message }}</p>
+                            </a>
+                            <a class="item" href="#" >
+                                <span class="heighlight-text">Hi All,doing great,still waiting for a call from the director.</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>-->
+            </div>
+            <!--
+                <div class="chat_message">
+                    <div class="list" >
+                        <div class="joblist-row">
+                            <a class="item" href="#" >
+                                <img src="../img/dashboard-userimg.png" width="6%" height="6%" style="float: left"/>
+                                <p  style="float: left; margin-left: 20px; margin-top: 20px">I see, how is the moive going,did you start shooting with the others?</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat_message1">
+
+                    <div class="list" >
+                        <div class="joblist-row1">
+                            <a class="item" href="#" >
+                                <span class="heighlight-text">Yeah,we did some shooting last week, got one scheduled for tommorrow as well.</span>
+                            </a>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>-->
+
+                <div class="chat_people-wrap">
+
+                    <div class="list" >
+                        <div class="joblist-row">
+
+                           <!-- <a class="item" href="#" style="margin-top: 140px">
+                                <div class="arrow" id ="button_arrow">-->
+                                    <img src="../img/camera.png" width="50px" height="50px" style="display: inline-block"  />
+                                    <!--<img src="../img/send.png" width="240px" height="50px" />-->
+                                    <input type="text" ng-model="message"  style="display: inline-block; margin-bottom: 25px; background: transparent; width: 30%;" placeholder="Message" />
+                                    <img src="../img/signup.png" width="100px" height="40px" style="display: inline-block" ng-click="sendMessage(receiver._id)"  />
+                              <!--  </div>
+                            </a>
+
+-->
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+        </div>
+
+</ion-view>

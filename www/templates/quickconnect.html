@@ -1,0 +1,174 @@
+<ion-view view-title="" hide-nav-bar="true"   class="registerpage-wrap">
+    <ion-content overflow-scroll="true" >
+
+            <div class="ionic-body">
+                <div class="bar bar-header bar-light" style="background: #080808 !important; ">
+                    <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">Quick Connect</h1>
+                    <button class="button button-icon icon ion-navicon" ng-click="toggleSideMenu()"></button>
+                </div>
+               <!-- <ion-scroll
+                        zooming="true" direction="xy" >-->
+                    <div class="content has-header scrollVertical">
+                        <form name="postJobForm" class="register-form" >
+
+                            <div class="postjob-form">
+                                <div class="list">
+                                    <ion-list>
+                                        <ion-checkbox  ng-model="proj.quickConnect" name="quickConnect"  ></ion-checkbox>
+                                        <a href="#"><!--Less Detail.--> Uses Current Location.<!-- auto-connect--> </a>
+
+                                    </ion-list>
+                                    <label class="item item-input item-floating-label">
+                                        <span class="input-label">Project Title</span>
+                                        <input type="text" placeholder="Project title" ng-model="proj.title" required>
+                                    </label>
+
+                                    <label class="item item-input item-floating-label">
+                                        <span class="input-label">Project Description</span>
+                                        <!--<input type="text" placeholder="Description" ng-model="proj.description" size="300" required>-->
+                                        <textarea style="background: transparent"  placeholder="Description" ng-model="proj.description"  required rows="8" cols="10">
+                                        </textarea>
+                                    </label>
+
+                                </div>
+
+
+                            </div>
+                            <div class="postjob-form1" >
+                                <div class="list">
+
+                                    <label class="item item-input item-floating-label">
+                                        <span class="" style="color: #ffffff">Category</span>
+                                        <select ng-model="proj.category" class="item item-input item-floating-label" style="width:100%; color: white" ng-change="changeCategory(proj.category)">
+                                            <option ng-repeat="item in categories" style="color: #000000">{{ item.category }}</option>
+
+                                        </select>
+                                        <!--<div class="arrow" id ="button_arrow" style="float:right">
+                                            <button class="button button-icon icon ion-chevron-bottom"></button>
+                                        </div>-->
+                                    </label>
+
+                                    <label class="item item-input item-floating-label">
+                                        <span class="" style="color: #ffffff">Job Role</span>
+                                        <select ng-model="proj.jobRole" class="item item-input item-floating-label" style="width:100%; color: white">
+                                            <option ng-repeat="item in jobRoles" style="color: #000000">{{ item }}</option>
+
+                                        </select>
+                                       <!-- <div class="arrow" id ="button_arrow" style="float:right">
+                                            <button class="button button-icon icon ion-chevron-bottom"></button>
+                                        </div>-->
+                                    </label>
+                                      <!--  <label class="item item-input item-floating-label">
+                                        <span class="input-label">Category</span>
+                                        <input  type="search" placeholder="Category" ng-model="proj.category" ng-keydown="onKeyDown()" >
+
+                                    </label>
+                                        <div class="optionList padding-left padding-right" ng-show="showHideCategory">
+                                            <ion-scroll>
+                                                <ul class="list">
+                                                    <li class="item" ng-click="catClick(item)" ng-repeat="item in categories ">{{item['cat']}}</li>
+                                                </ul>
+                                            </ion-scroll>
+                                        </div>-->
+
+                                   <!-- <label class="item item-input item-floating-label">
+                                        <span class="input-label">Job Role</span>
+                                        <input  type="search" placeholder="Job Role" ng-model="proj.jobRole" ng-keydown="onKeyDown()" >
+
+                                    </label>
+                                    <div class="optionList padding-left padding-right" ng-show="showHideJobRole">
+                                        <ion-scroll>
+                                            <ul class="list">
+                                                <li class="item" ng-click="jobRoleClick(item)" ng-repeat="item in jobRoles ">{{item['cat']}}</li>
+                                            </ul>
+                                        </ion-scroll>
+                                    </div>-->
+
+                                </div>
+
+                            </div>
+                            <div class="postjob-form2" style="margin-left: 2%;">
+
+                                <div class="arrow" id ="button_arrow" style="float:left">
+                                    <button class="button button-icon icon ion-chevron-plus"></button>
+
+                                </div>
+                                <h2  style=" font-size: 16px">Add Job(s)</h2>
+                                <div class="arrow" id ="button_arrow" style="float:right">
+                                    <button class="button button-icon icon ion-chevron-cross"></button>
+
+                                </div>
+                            </div>
+                            <div class="postjob-wrap2" >
+
+                                <a class="item item-thumbnail-left2" href="#">
+
+                                    <h2><b >More Details</b></h2>
+
+
+
+                                </a>
+                            </div>
+                            <div class="postjob-form" >
+                                <div class="list">
+
+<br />
+                                    <span class="input-label">WithIn</span>
+                                    <!--<label class="item item-input item-floating-label">
+
+                                        <input type="text" placeholder="Miles" style="float: left; position: absolute" ng-model="proj.withIn">
+                                        <div class="arrow" id ="button_arrow" style="float:right">
+                                            <button class="button button-icon icon ion-chevron-bottom"></button>
+                                        </div>
+                                    </label>-->
+
+                                    <label class="item item-input item-floating-label">
+                                        <span class="input-label">Miles</span>
+                                        <input type="text" placeholder="Miles" ng-model="proj.withIn" required>
+                                    </label>
+
+                                </div>
+
+                                <!--<ion-list>-->
+                                   <!-- <div class="row" data-fittext style="background: transparent">-->
+
+                            <!--<span style="display: inline-block">-->
+
+                        <ion-checkbox  style="background: transparent; border: none; color: #ffffff; border-bottom-left-radius: 0;"   ng-model="proj.union"  required ng-click="setWithIn(proj,'union')">Union</ion-checkbox>
+
+                                        <!--</span>
+                             <span style="display: inline-block">-->
+
+                        <ion-checkbox style="background: transparent; border: none"  ng-model="proj.nonUnion"  required ng-click="setWithIn(proj,'nonUnion')">Non-Union</ion-checkbox>
+
+                                      <!--  </span>
+                       <span style="display: inline-block">-->
+                           <ion-checkbox  style="background: transparent; border: none" ng-model="proj.both" required ng-click="setWithIn(proj,'both')">Both </ion-checkbox>
+
+                          <!-- </span>-->
+                                  <!--  </div>-->
+                               <!-- </ion-list>-->
+
+
+                            </div>
+
+                            <div class="postjob-form" >
+                                <div class="list">
+
+                                    <span class="input-label" style="width: 100%"> Location</span>
+                                    <ion-google-place placeholder="Enter an address"  ng-model="proj.location" current-location="true" />
+
+                                </div>
+                            </div>
+                         <!--   <div class="register-form">
+                                <button class="button button-block button-royal button-positive" ng-disabled="postJobForm.$invalid" ng-click="postJob(proj)">Post Job(s)</button>
+                            </div>-->
+                        </form>
+                        <button class="button button-block button-royal button-positive" ng-disabled="postJobForm.$invalid" ng-click="postJob(proj)">Post Job(s)</button>
+                    </div>
+
+               <!-- </ion-scroll>-->
+            </div>
+
+    </ion-content>
+</ion-view>

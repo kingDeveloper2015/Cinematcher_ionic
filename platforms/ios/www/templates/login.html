@@ -1,0 +1,50 @@
+<ion-view view-title="Login" class="registerpage-wrap" hide-nav-bar="true">
+    <div class="ionic-body" data-fittext>
+       <!-- <div class="bar bar-header bar-light">
+            <h1 class="title">Login</h1>
+
+        </div>-->
+
+        <div style="text-align: center;"><img src="./img/cinematcher.png"  halign="center" style="width: 290px; height: 70px; padding: 10px; margin-top: 10px;" >
+        </div>
+        <div
+                zooming="true" direction="xy" >
+            <div class="content has-header scrollVertical" style="margin-top:-5px; ">
+                <form class="register-form" name="loginForm">
+                    <div class="list">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Email</span>
+                            <input type="email" placeholder="Email" ng-model="obj.email" required>
+
+                        </label>
+
+                       <!-- <ion-spinner icon="spiral"></ion-spinner>-->
+                        <label class="item item-input item-floating-label" style="margin-bottom: 2%;">
+                            <span class="input-label">Password</span>
+                            <input type="password" placeholder="Password" ng-model="obj.password" required="">
+
+                        </label>
+
+                        <a href="#/app/forGotPassword" style="margin-top:1%; color:#795BA7; width: 100%; font: 50px" >
+                           forgot username/password
+                        </a>
+
+
+
+                    </div>
+
+
+                    <!--<h2>Sign in with:</h2>
+                    <div style="text-align: center;  "><a href="#"><img ng-src="./img/fbd-3.png" style="" halign="center" ></a>
+                        <a href="#"><img ng-src="./img/twitter.png" ></a>
+                        <a href="#"><img ng-src="./img/lin.png"  ></a></div>-->
+                </form>
+                <a class="button button-block button-royal button-positive" ng-disabled="loginForm.$invalid" ng-click="login(obj)">Sign In</a>
+                <a class="button button-block button-royal" href="#/register"  >Register</a>
+            </div>
+
+        </div>
+    </div>
+</ion-view>
+
+

@@ -1,0 +1,81 @@
+
+<ion-view view-title=""  hide-nav-bar="true"  can-swipe-back="false" class="registerpage-wrap">
+
+    <div class="ionic-body">
+        <div class="bar bar-header bar-light" >
+            <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="myGoBack()"></a><h1 class="title">{{ projDisp.title }}:<span class="heighlight-text">{{ projDisp.jobRole }} </span></h1>
+            <button class="button button-icon icon ion-navicon"  ng-click="toggleSideMenu()"></button>
+        </div>
+
+        <div class="chat_people-wrap">
+
+            <div class="list" >
+                <div class="joblist-row">
+                    <a class="item" href="#" style="margin-top: 70px" ng-repeat="proj in projects">
+                        <img src='../img/dashboard-userimg.png' width="100px" height="100px"  style="float: left"/>
+
+                        <p  style="float: left; margin-left: 20px; margin-top: 10px">{{ proj.getHiredId.firstName }} {{ proj.getHiredId.lastName }}</p>
+                        <button class="button button-block button-royal button-positive" ng-show="proj.isPending" style=" margin-left: 20%; width: 100px" ng-click="hireUser(proj.jobId._id, proj._id, proj.getHiredId._id, proj)">Hire </button>
+                        <!--<button  class="button button-block button-royal button-positive" style="display: inline-block; margin-left: 10%; width: 150px" ng-click="sendMessage(proj.jobId._id, proj.getHiredId._id)" >Message</button>-->
+                        <a  class="button button-block button-royal button-positive" style="display: inline-block; margin-left: 10%; width: 150px" href="#/app/chatMessages/{{ proj.getHiredId._id }}/{{ proj.jobId._id }}" >Message</a>
+                        <!--<img src='../img/hire.png' width="100px" height="40px" style="margin-top: 50px; margin-left: 1%"/>-->
+                        <!--<img src='../img/block.png' width="100px" height="40px"/>-->
+
+
+                    </a>
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <!-- <div class="chat_message1">
+
+             <div class="list" >
+                 <div class="joblist-row1">
+                     <a class="item" href="#" >
+                         <span class="heighlight-text">Hi All,doing great,still waiting for a call from the director.</span>
+                     </a>
+                 </div>
+
+
+
+             </div>
+         </div>
+         <div class="chat_message">
+             <div class="list" >
+                 <div class="joblist-row">
+                     <a class="item" href="#" >
+                         <img src="../img/dashboard-userimg.png" width="6%" height="6%" style="float: left"/>
+                         <p  style="float: left; margin-left: 20px; margin-top: 20px">I see, how is the moive going,did you start shooting with the others?</p>
+                     </a>
+                 </div>
+             </div>
+         </div>
+         <div class="chat_message1">
+
+             <div class="list" >
+                 <div class="joblist-row1">
+                     <a class="item" href="#" >
+                         <span class="heighlight-text">Yeah,we did some shooting last week, got one scheduled for tommorrow as well.</span>
+                     </a>
+                 </div>
+
+
+
+
+             </div>
+
+
+
+         </div>-->
+
+
+    </div>
+
+</ion-view>
